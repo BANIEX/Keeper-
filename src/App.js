@@ -1,6 +1,7 @@
 import listOfBooks from "./components/utils";
 import Books from "./components/Books";
 import { useEffect, useState } from "react";
+import { UserInfo } from "./components/UserInfo";
 const App = () => {
   const [users, setUsers] = useState();
   const [count, setCount] = useState(0);
@@ -58,17 +59,9 @@ const App = () => {
       <h1>Users</h1>
       {isTrue && <h1>Yes Short circuiting is working</h1>}
       <h1>{number}</h1>
-      <h1>{name || "Baniext"}</h1>
+      <h1>{name || "Baniex"}</h1>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <div style={{ margin: "20px" }}>
-          <img src={large} alt="" />
-          <h2>
-            {first} {last}
-          </h2>
-          <h4>{country}</h4>
-          <p>{email}</p>
-          <p>{phone}</p>
-        </div>
+        <UserInfo email={email} country={country} first={first} last={last} phone={phone} large={large}/>
       </div>
       <div style={{ width: "200px", margin: "0 auto" }}>
         <button
